@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>BOLIVIAMUX | El Sonido que te Mueve</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&amp;family=Hanken+Grotesk:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface": "#131313",
+                    "error-container": "#93000a",
+                    "on-error-container": "#ffdad6",
+                    "tertiary-fixed-dim": "#f4bb92",
+                    "surface-dim": "#131313",
+                    "tertiary-fixed": "#ffdcc5",
+                    "surface-variant": "#353534",
+                    "tertiary": "#f4bb92",
+                    "background": "#131313",
+                    "surface-container": "#201f1f",
+                    "tertiary-container": "#b98661",
+                    "secondary-fixed": "#fbddca",
+                    "inverse-primary": "#bf0027",
+                    "primary": "#ffb3b1",
+                    "surface-container-highest": "#353534",
+                    "on-primary-fixed-variant": "#92001c",
+                    "on-tertiary-fixed-variant": "#653d1e",
+                    "surface-container-low": "#1c1b1b",
+                    "on-primary": "#680011",
+                    "on-surface-variant": "#e7bdbb",
+                    "surface-bright": "#3a3939",
+                    "on-error": "#690005",
+                    "primary-container": "#ff535a",
+                    "on-primary-container": "#5b000d",
+                    "secondary-fixed-dim": "#dec1af",
+                    "on-secondary-fixed": "#28180d",
+                    "primary-fixed-dim": "#ffb3b1",
+                    "primary-fixed": "#ffdad8",
+                    "on-secondary-container": "#ccb09f",
+                    "on-tertiary-fixed": "#301400",
+                    "secondary-container": "#574335",
+                    "on-tertiary-container": "#422105",
+                    "surface-tint": "#ffb3b1",
+                    "on-primary-fixed": "#410007",
+                    "outline": "#ad8886",
+                    "on-secondary": "#3f2c20",
+                    "on-secondary-fixed-variant": "#574335",
+                    "on-background": "#e5e2e1",
+                    "inverse-surface": "#e5e2e1",
+                    "outline-variant": "#5d3f3e",
+                    "surface-container-lowest": "#0e0e0e",
+                    "inverse-on-surface": "#313030",
+                    "error": "#ffb4ab",
+                    "secondary": "#dec1af",
+                    "surface-container-high": "#2a2a2a",
+                    "on-tertiary": "#4a280a",
+                    "on-surface": "#e5e2e1"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter": "24px",
+                    "container-padding-desktop": "64px",
+                    "unit": "8px",
+                    "container-padding-mobile": "20px",
+                    "section-gap": "80px"
+            },
+            "fontFamily": {
+                    "body-md": ["Hanken Grotesk"],
+                    "label-md": ["Hanken Grotesk"],
+                    "body-lg": ["Hanken Grotesk"],
+                    "headline-md": ["Sora"],
+                    "headline-sm": ["Sora"],
+                    "display-lg": ["Sora"],
+                    "display-lg-mobile": ["Sora"]
+            },
+            "fontSize": {
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                    "headline-sm": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "display-lg-mobile": ["36px", {"lineHeight": "42px", "letterSpacing": "-0.02em", "fontWeight": "800"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .active-glow {
+            box-shadow: 0 0 20px rgba(255, 83, 90, 0.4);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #ff535a;
+            border-radius: 10px;
+        }
+        .pulse-red {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: .5; }
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-container-padding-mobile md:px-container-padding-desktop py-4 bg-surface/90 backdrop-blur-md border-b border-outline-variant">
+<div class="font-display-lg text-display-lg-mobile md:text-display-lg font-extrabold text-primary uppercase tracking-tighter">
+            BOLIVIAMUX
+        </div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-primary border-b-2 border-primary pb-1 font-label-md text-label-md" href="#">Home</a>
+<a class="text-on-surface-variant font-label-md text-label-md hover:text-primary transition-colors duration-200" href="#players">Players</a>
+<a class="text-on-surface-variant font-label-md text-label-md hover:text-primary transition-colors duration-200" href="#blog">Blog</a>
+<a class="text-on-surface-variant font-label-md text-label-md hover:text-primary transition-colors duration-200" href="#contact">Contact</a>
+</nav>
+<button class="bg-primary-container text-on-primary-container px-6 py-2 rounded-full font-label-md text-label-md hover:scale-105 active:scale-95 transition-all flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">radio</span>
+            Listen Live
+        </button>
+</header>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative min-h-[819px] flex items-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover opacity-40" data-alt="A high-energy radio studio environment with professional microphones, glowing red 'On Air' signs, and blurred audio mixing consoles in the background. The lighting is cinematic, dominated by deep shadows and vibrant red highlights, creating a modern and urgent atmosphere suitable for a premium broadcasting brand. The overall style is high-contrast and professional." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBz9WnK7zhj7oqopXo9mv5BWgCW7rcNbRK6iGsRvCiHkVvzPPyJOOs8eVT0s4dEZRkUfmULg21cXjpcYPgbQx1R8ylFFZRiHtKgXIviqbrBHvqXYymFk5YcczIjYdpsqRHJnEl-_fbxufw1_b8M6W3ctDrvsl5EThmblpwTaEIa9694RJeMe3aCQu7Ha4pry1F3e3KavB6UHDUMgxbcgXG0LCK0KIAmISJa-zFWvh_T0C_1QUdPairKxNXDczQL7PWfGULvSTgOgvE"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/60 to-transparent"></div>
+</div>
+<div class="relative z-10 px-container-padding-mobile md:px-container-padding-desktop max-w-4xl">
+<div class="inline-flex items-center gap-2 bg-primary-container/20 border border-primary-container/40 px-3 py-1 rounded-full text-primary-container font-label-md text-label-md mb-6 pulse-red">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span>
+                    EN VIVO AHORA
+                </div>
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-white mb-6 leading-tight">
+                    BOLIVIAMUX: <span class="text-primary-container">El Sonido</span> que te Mueve
+                </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-2xl">
+                    Sintoniza la frecuencia que redefine la radio digital. Desde los éxitos globales hasta el movimiento underground, estamos en el epicentro de la cultura musical.
+                </p>
+<div class="flex flex-wrap gap-4">
+<button class="bg-primary-container text-on-primary-container px-8 py-4 rounded-lg font-headline-sm text-headline-sm hover:bg-primary-container/90 transition-all flex items-center gap-3">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+                        Escuchar Ahora
+                    </button>
+<button class="border border-outline-variant text-white px-8 py-4 rounded-lg font-headline-sm text-headline-sm hover:bg-white/5 transition-all">
+                        Explorar Canales
+                    </button>
+</div>
+</div>
+</section>
+<!-- Players Section -->
+<section class="py-section-gap px-container-padding-mobile md:px-container-padding-desktop bg-surface" id="players">
+<div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
+<div>
+<h2 class="font-headline-md text-headline-md text-white mb-2">Nuestras Estaciones</h2>
+<div class="h-1 w-24 bg-primary-container"></div>
+</div>
+<p class="text-on-surface-variant max-w-md">Selecciona tu vibra. Tres canales especializados transmitiendo 24/7 sin interrupciones.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Hit Radio Card -->
+<div class="bg-surface-container border border-outline-variant p-6 rounded-xl hover:border-primary-container transition-all group overflow-hidden relative">
+<div class="absolute top-4 right-4 bg-primary-container text-on-primary-container px-2 py-1 rounded text-[10px] font-bold uppercase tracking-widest z-10">Live</div>
+<div class="aspect-square rounded-lg mb-6 overflow-hidden border border-outline-variant">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Vibrant pop music aesthetics with neon lights, a modern artist profile, and high-saturation colors. The style is clean and high-energy, featuring a deep black background with glowing red and coffee brown accents to match the BOLIVIAMUX brand identity. Minimalist and impactful." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbNBtakqi0ZOM8dLTDlE9azjnMadRpEOA8kC3QXA7_dv_j_vVC3RBU_1nInAmGIbV3xR0RQh9H85YFGioBPoTUK3010-WCR26NvjLchlmOkXIvRu3VIgsJpo34Oad38PC1EDc87oF9-nZSUb1rYz1Rv3s8x9xo8rVUhTvcAWujEysOPDxAJfyMYUOIoDm91h44retxs7-jntBJD92G1R8ENi96FhYJNI-lY0yYOFlZy5s5tP7HmuWKPdrd3USzEuIKZ8FJudjod8w"/>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-white mb-1">Hit Radio</h3>
+<p class="text-on-surface-variant text-label-md mb-6">Top 40 &amp; Global Hits</p>
+<div class="space-y-4">
+<div class="h-1 w-full bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary-container w-2/3"></div>
+</div>
+<div class="flex items-center justify-between">
+<button class="p-3 bg-primary-container text-on-primary-container rounded-full active-glow transition-all">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">play_circle</span>
+</button>
+<div class="flex gap-1">
+<div class="w-1 h-4 bg-primary-container animate-[bounce_1s_infinite]"></div>
+<div class="w-1 h-6 bg-primary-container animate-[bounce_1.2s_infinite]"></div>
+<div class="w-1 h-3 bg-primary-container animate-[bounce_0.8s_infinite]"></div>
+<div class="w-1 h-5 bg-primary-container animate-[bounce_1.1s_infinite]"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Urban Mix Card -->
+<div class="bg-surface-container border border-outline-variant p-6 rounded-xl hover:border-primary-container transition-all group overflow-hidden relative">
+<div class="aspect-square rounded-lg mb-6 overflow-hidden border border-outline-variant">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Urban street culture photography with a dark, moody vibe. Features graffiti elements, a turntable in shadows, and high-contrast red lighting. The aesthetic is gritty but sophisticated, utilizing deep coffee browns and blacks with a focused red spotlight effect to highlight the subject." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUZpRkKvenj82euSrzboxPFc-QVGu1HCdGi2Kofo6o_hO1rd4FhYo_uvaB-92TiMVL_gTchWmDsvZ8d9y8sUucX4f2rzNTmvELeM1JXWH3yUFYHw49OnDbVen3e-XSZDHKUN9slq75n6-pRk7PgPC0v7I8VSjKmyty7V-7ZgX1J1Zr8fSO2Jky-ov_j95WzcIFrhYB5LGzg9eQ1rfAYx4UNnBXBKTLApeHG-uWuZGUkZFQcGUC_CtwOmZwEOdjbBREtB6_YbsDQOE"/>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-white mb-1">Urban Mix</h3>
+<p class="text-on-surface-variant text-label-md mb-6">Hip-Hop, Trap &amp; R&amp;B</p>
+<div class="space-y-4">
+<div class="h-1 w-full bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-outline w-1/4"></div>
+</div>
+<div class="flex items-center justify-between">
+<button class="p-3 border border-outline-variant text-white rounded-full hover:bg-white/10 transition-all">
+<span class="material-symbols-outlined">play_circle</span>
+</button>
+<div class="flex gap-1 opacity-30">
+<div class="w-1 h-4 bg-white"></div>
+<div class="w-1 h-6 bg-white"></div>
+<div class="w-1 h-3 bg-white"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Classic Rock Card -->
+<div class="bg-surface-container border border-outline-variant p-6 rounded-xl hover:border-primary-container transition-all group overflow-hidden relative">
+<div class="aspect-square rounded-lg mb-6 overflow-hidden border border-outline-variant">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Vintage aesthetic showing a close-up of an electric guitar in a smoke-filled room with warm coffee-toned lighting. Deep shadows and a dramatic red glow from a studio light create a sense of classic rock heritage. The image is high-contrast, moody, and aligns with a dark-themed UI design." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6lpNTzN6RskkY7Z8M07-d9jh9TxeTw4P7oNf9F6IYwMvuuA7g5sAeoH2ilRrWSoJ4Oq6TLftlEF2SmFVz4G8EuDUvmQ_DVxsAf5htcVxjQfs8I0u-klhw3tY83mjKxSX34K0MPPIFxYJY3qR-yvVrm5Irx_KAPZvBBB2pVw40j9hR5jIDAspSQXHo5P0-FttFM_lBbtSHhN30T-giBqy_zuSmfpFi5CNkzWT7mfIowXQJexK0Nj3iUcKab9jjt2XUdYwEm4KBBXw"/>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-white mb-1">Classic Rock</h3>
+<p class="text-on-surface-variant text-label-md mb-6">Legends &amp; Anthems</p>
+<div class="space-y-4">
+<div class="h-1 w-full bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-outline w-0"></div>
+</div>
+<div class="flex items-center justify-between">
+<button class="p-3 border border-outline-variant text-white rounded-full hover:bg-white/10 transition-all">
+<span class="material-symbols-outlined">play_circle</span>
+</button>
+<div class="flex gap-1 opacity-30">
+<div class="w-1 h-4 bg-white"></div>
+<div class="w-1 h-6 bg-white"></div>
+<div class="w-1 h-3 bg-white"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Blog Section -->
+<section class="py-section-gap px-container-padding-mobile md:px-container-padding-desktop bg-surface-container-low" id="blog">
+<div class="mb-12 text-center">
+<h2 class="font-headline-md text-headline-md text-white mb-4">Últimas Noticias</h2>
+<div class="h-1 w-16 bg-primary-container mx-auto"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+<!-- Blog 1 -->
+<article class="flex flex-col group cursor-pointer">
+<div class="relative overflow-hidden rounded-xl mb-6">
+<img class="w-full aspect-[16/10] object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A futuristic music festival stage with massive LED screens displaying red geometric patterns. The crowd is shown as silhouettes against the bright red and deep black environment. The atmosphere is energetic and modern, reflecting the cutting edge of the music industry in a high-contrast digital art style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkoFM1I1u5dvL97_xNegqQb4Rq4k_nn0R8PxrxgPxC9fCwFjKmIIT7HYJ96Tai0ljof6z36SJhxavQG04qVvofCR0MahClsV1osiggRct-unACFYugV978gmmoIDTOkmxibLLNdecN06hlbYNWD8BHMhncMOG-SWJg3XaJ1n2smtEdxActdorVyqJwbKPbTxNSQoVJabw8UEkyc9VNyZLYlam1ICSAvUHxhrerZtnyQGdqZjsDHmYKb2hzNpr7DHiLB-mQbQT2Xug"/>
+<div class="absolute bottom-0 left-0 p-4 bg-gradient-to-t from-black/80 to-transparent w-full">
+<span class="text-primary-container font-label-md text-[12px] uppercase">Festivales</span>
+</div>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-white mb-3 group-hover:text-primary transition-colors">El futuro de los festivales digitales: ¿Qué esperar en 2025?</h3>
+<p class="text-on-surface-variant font-body-md line-clamp-2">Analizamos cómo la realidad aumentada está transformando la experiencia de los conciertos en vivo...</p>
+</article>
+<!-- Blog 2 -->
+<article class="flex flex-col group cursor-pointer">
+<div class="relative overflow-hidden rounded-xl mb-6">
+<img class="w-full aspect-[16/10] object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Close-up of high-end studio headphones resting on a dark wood surface with a single spotlight creating a warm coffee glow. A blurred red neon sign in the background adds a professional broadcasting touch. Minimalist, premium, and atmospheric photography consistent with a dark-themed station website." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCAWaen3eWXMmeu8wy_Ca693WcOSZeyR-L4Zh-HvjDgEdSg7uMj7Z04v2HiKFB6g99c6yL1Ycs8GNWRCUloEXqPwr6if2yRj_a7h6Pp7SnYD1-0-Fn2yYz9CKp84zStkYhH28c4CUKvkYZ8heRswksHsArDG11WHq_rlDdW1JqkazJedwOWgxr7e9SsmcJtNYgran7HRypNe03T28d60aP9mgm_SWZAXwM0j1NXbAbGv4m9kuvZ4s0iOnLfYPPx9ULV0dk8HAY7wwA"/>
+<div class="absolute bottom-0 left-0 p-4 bg-gradient-to-t from-black/80 to-transparent w-full">
+<span class="text-primary-container font-label-md text-[12px] uppercase">Tecnología</span>
+</div>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-white mb-3 group-hover:text-primary transition-colors">Equipo Pro: Los 5 micrófonos que usan las estrellas de la radio</h3>
+<p class="text-on-surface-variant font-body-md line-clamp-2">Descubre las herramientas esenciales para lograr ese sonido de cristal en tus producciones...</p>
+</article>
+<!-- Blog 3 -->
+<article class="flex flex-col group cursor-pointer">
+<div class="relative overflow-hidden rounded-xl mb-6">
+<img class="w-full aspect-[16/10] object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A moody silhouette of a DJ at work in a dark club. The only light comes from the glowing red dials of the mixer and a few backlights. The aesthetic is mysterious and rhythmic, emphasizing the dark-themed vibe with deep coffee brown shadows and vibrant red highlights." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5znOYHeo5kTRnHPLNLrq7N_tIYqhY25yFLTHV3TBM46o_65TLiiedPvSjvzZ3M2V_0OiVrBrQ91zY78gi7UCc_M1XTNOkrHXjd1zR4OcU9uL8QBe3B7Hww-mdKgTl9WEgSSXTCejqhr_WZlifc9WpQqkDJi8zpFrHo94v9I-vX0VPTCYYz848cGR0oJmvN8cu88qH1rMeJxdf0Ar3UH8kt3VBSWjFXpYAGJaXeZo2LCPKjF-Osw6nbw0ONQQPfsIu_FZ74ItRR8g"/>
+<div class="absolute bottom-0 left-0 p-4 bg-gradient-to-t from-black/80 to-transparent w-full">
+<span class="text-primary-container font-label-md text-[12px] uppercase">Entrevistas</span>
+</div>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-white mb-3 group-hover:text-primary transition-colors">En el Estudio: Una charla exclusiva con los pioneros del Tech-House</h3>
+<p class="text-on-surface-variant font-body-md line-clamp-2">Nos sumergimos en el proceso creativo de los artistas que están dominando las listas este mes...</p>
+</article>
+</div>
+</section>
+<!-- Contact Section -->
+<section class="py-section-gap px-container-padding-mobile md:px-container-padding-desktop" id="contact">
+<div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 bg-surface-container border border-outline-variant rounded-2xl overflow-hidden">
+<div class="p-10 md:p-16 bg-surface-container-highest flex flex-col justify-center">
+<h2 class="font-display-lg text-display-lg-mobile text-white mb-6">Contáctanos</h2>
+<p class="text-on-surface-variant mb-8 text-body-lg">¿Quieres publicitarte con nosotros o enviarnos tu demo? Déjanos un mensaje y nuestro equipo se pondrá en contacto.</p>
+<div class="space-y-6">
+<div class="flex items-center gap-4 text-white">
+<span class="material-symbols-outlined text-primary-container">mail</span>
+<span>contacto@boliviamux.com</span>
+</div>
+<div class="flex items-center gap-4 text-white">
+<span class="material-symbols-outlined text-primary-container">call</span>
+<span>+591 2 2441010</span>
+</div>
+<div class="flex items-center gap-4 text-white">
+<span class="material-symbols-outlined text-primary-container">location_on</span>
+<span>La Paz, Bolivia</span>
+</div>
+</div>
+</div>
+<div class="p-10 md:p-16">
+<form class="space-y-6">
+<div>
+<label class="block font-label-md text-[12px] uppercase text-on-surface-variant mb-2">Nombre Completo</label>
+<input class="w-full bg-transparent border border-outline-variant rounded p-3 text-white focus:border-primary-container focus:ring-0 transition-all outline-none" type="text"/>
+</div>
+<div>
+<label class="block font-label-md text-[12px] uppercase text-on-surface-variant mb-2">Correo Electrónico</label>
+<input class="w-full bg-transparent border border-outline-variant rounded p-3 text-white focus:border-primary-container focus:ring-0 transition-all outline-none" type="email"/>
+</div>
+<div>
+<label class="block font-label-md text-[12px] uppercase text-on-surface-variant mb-2">Mensaje</label>
+<textarea class="w-full bg-transparent border border-outline-variant rounded p-3 text-white focus:border-primary-container focus:ring-0 transition-all outline-none resize-none" rows="4"></textarea>
+</div>
+<button class="w-full bg-primary-container text-on-primary-container py-4 rounded font-bold uppercase tracking-widest hover:bg-primary-container/90 transition-all active:scale-95">
+                            Enviar Mensaje
+                        </button>
+</form>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-section-gap px-container-padding-mobile md:px-container-padding-desktop flex flex-col md:flex-row justify-between items-center gap-gutter border-t border-outline-variant bg-surface-container-lowest">
+<div class="flex flex-col items-center md:items-start gap-4">
+<div class="font-headline-sm text-headline-sm font-bold text-on-surface uppercase tracking-tight">BOLIVIAMUX</div>
+<p class="text-on-surface-variant text-body-md text-center md:text-left max-w-xs">
+                © 2024 BOLIVIAMUX. All rights reserved. High-Energy Broadcasting.
+            </p>
+</div>
+<div class="flex gap-8">
+<a class="text-on-surface-variant hover:text-primary-container transition-colors font-body-md" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-primary-container transition-colors font-body-md" href="#">Terms of Service</a>
+<a class="text-on-surface-variant hover:text-primary-container transition-colors font-body-md" href="#">Advertising</a>
+</div>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center text-white hover:border-primary-container hover:text-primary-container transition-all" href="#">
+<span class="material-symbols-outlined text-[20px]">public</span>
+</a>
+<a class="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center text-white hover:border-primary-container hover:text-primary-container transition-all" href="#">
+<span class="material-symbols-outlined text-[20px]">share</span>
+</a>
+<a class="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center text-white hover:border-primary-container hover:text-primary-container transition-all" href="#">
+<span class="material-symbols-outlined text-[20px]">graphic_eq</span>
+</a>
+</div>
+</footer>
+<!-- Persistent Mini Player (Desktop) -->
+<div class="fixed bottom-6 right-6 z-[100] hidden lg:block">
+<div class="bg-surface-container border border-outline-variant p-4 rounded-xl shadow-2xl flex items-center gap-4 min-w-[320px] backdrop-blur-md">
+<img class="w-12 h-12 rounded bg-surface-container-highest" data-alt="A small, stylized thumbnail of a music album cover featuring abstract red and white wave patterns on a dark background. The image is sleek and modern, designed to represent a 'Now Playing' status in a high-end audio interface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBeWJLjg8SKre4VlterG0ZNdZmakRj2oKWfkKzo6Kh_KDM026KHY-AW2zAkWiNpI4Xss-zTfd-wyMKI1wMY4V9Hl0-pHpi6LJRc2DVQVj3GZ325gRHJgIuw_oWKmTctHWRJKA5QWjixNBAbKrRNruejsFyiCyJxAdbzrel8jT_xZdmeIZ6WBVuXAJyJYhHm0ivGHbhyybKPzv0qUNfVvzTcbWVLc_s8bttmVLagkPclntY5xiZ6ZYLBbHnlHv1feCFote9pfgB9Xtk"/>
+<div class="flex-1 overflow-hidden">
+<div class="text-white font-bold text-label-md truncate">Hit Radio Bolivia</div>
+<div class="text-primary-container text-[12px] animate-pulse">On Air: Top Global Hits</div>
+</div>
+<button class="w-10 h-10 bg-primary-container text-on-primary-container rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">pause</span>
+</button>
+</div>
+</div>
+<script>
+        // Smooth scroll for nav links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if(target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Simple visibility observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('article, #players > div > div').forEach(el => {
+            el.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-10');
+            observer.observe(el);
+        });
+    </script>
+</body></html>
