@@ -4,109 +4,134 @@ import Image from "astro/components/Image.astro";
 import "../style/global.css";
 import "../style/app.css";
 
-import Banner from "../assets/banner.jpg";
-import Player1 from "../assets/player1.jpg";
-import Player2 from "../assets/player2.jpg";
-import Player3 from "../assets/player3.jpg";
+import Hero from "../assets/hero.jpg";
+import HeroLogo from "../assets/logo-hero.png";
+import Player1 from "../assets/sp-1.jpeg";
+import Player2 from "../assets/wara.jpeg";
+import Player3 from "../assets/color.jpeg";
+
+import Menu from "../assets/menu.svg";
+import Close from "../assets/close.svg";
+import PlayArrow from "../assets/play_arrow.svg";
+import Mail from "../assets/mail.svg";
+import Call from "../assets/call.svg";
+import LocationOn from "../assets/location_on.svg";
+import Public from "../assets/public.svg";
+import Share from "../assets/share.svg";
+import GraphicEq from "../assets/graphic_eq.svg";
 
 const tracks = [
-	{
-		id: 1,
-		title: "BoliviaMux Mix Vol. 1",
-		description: "Programacion en vivo 24/7",
-		image: Player1,
-		url: "../../public/02. David Guetta & Cedric Gervais & Chris Willis - Would I Lie To You.ogg",
-	},
-	{
-		id: 2,
-		title: "Transmisión en Vivo Especial",
-		description: "Musica del momento",
-		image: Player2,
-		url: "../../public/04. The Chainsmokers - Paris.ogg",
-	},
-	{
-		id: 3,
-		title: "Musica los 80s",
-		description: "Los mejores clasicos",
-		image: Player3,
-		url: "../../public/06. Calvin Harris - My Way.ogg",
-	},
+  {
+    id: 1,
+    title: "SP-1",
+    description: "CONTEMPORÁNEA",
+    image: Player1,
+    url: "/02. David Guetta & Cedric Gervais & Chris Willis - Would I Lie To You.ogg",
+  },
+  {
+    id: 2,
+    title: "COLOR",
+    description: "POP LATINO",
+    image: Player3,
+    url: "/06. Calvin Harris - My Way.ogg",
+  },
+  {
+    id: 3,
+    title: "W.A.R.A.",
+    description: "TROPICAL",
+    image: Player2,
+    url: "/04. The Chainsmokers - Paris.ogg",
+  },
 ];
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>BoliviaMux</title>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="/logo.ico" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Boliviaretro</title>
+    <meta
+      name="description"
+      content="Boliviaretro escucha la mejor radio online desde La Paz, Bolivia. Música en vivo, éxitos del momento y programación las 24 horas."
+    />
+     <!-- <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Hanken+Grotesk:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />  -->
 
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link
-			href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
-			rel="stylesheet"
-		/>
-		<link
-			href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Hanken+Grotesk:wght@400;600&display=swap"
-			rel="stylesheet"
-		/>
-		<link
-			href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
-			rel="stylesheet"
-		/>
-		<link
-			href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
-			rel="stylesheet"
-		/>
-	</head>
-	<body class="bg-neutral-950 text-gray-200">
-		<header
-			class="bg-neutral-950 text-white fixed top-0 left-0 w-full z-50 border-b border-neutral-800"
-		>
-			<div
-				class="relative z-20 bg-neutral-950 container mx-auto flex justify-between items-center px-4 py-4"
-			>
-				<div
-					class="text-lg md:text-xl font-bold uppercase tracking-tighter"
-				>
-					BOLIVIAMUX
-				</div>
+    <style is:global>
+      @font-face {
+        font-family: "Mozilla";
+        /* Astro resolverá esta ruta local automáticamente durante el build */
+        src: url("../fonts/Mozilla_Headline/MozillaHeadline-VariableFont_wdth\,wght.ttf");
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+      }
 
-				<button
-					id="menuBtn"
-					class="md:hidden py-2 rounded-full hover:scale-105 active:scale-95 transition-all cursor-pointer"
-				>
-					<div id="menuIcon">
-						<span class="material-symbols-outlined"> menu </span>
-					</div>
-					<div id="closeIcon" class="hidden">
-						<span class="material-symbols-outlined"> close </span>
-					</div>
-				</button>
+      body {
+        font-family: "Mozilla", sans-serif;
+      }
+    </style>
+  </head>
+  <body class="bg-neutral-950 text-gray-200">
+    <header
+      class="bg-neutral-950 text-white absolute top-0 left-0 w-full z-50 border-b border-neutral-800"
+    >
+      <div
+        class="relative z-20 bg-neutral-950 container mx-auto flex justify-between items-center px-4 py-4"
+      >
+        <div class="flex flex-row items-center gap-2">
+          <img src="/logo.png" alt="Logo Bolivia Retro" width="32" />
+          <h1 class="text-xl md:text-2xl tracking-widest font-medium">
+            Bolivia<span class="text-red-700">retro</span>
+          </h1>
+        </div>
 
-				<nav id="menu" class="hidden md:flex items-center gap-6">
-					<a
-						class="text-red-500 border-b-2 border-red-600 pb-1 text-md"
-						href="#">Home</a
-					>
-					<a
-						class="hover:text-red-500 transition-colors duration-200"
-						href="#players">Players</a
-					>
-					<a
-						class="hover:text-red-500 transition-colors duration-200"
-						href="#blog">Blog</a
-					>
-					<a
-						class="hover:text-red-500 transition-colors duration-200"
-						href="#contact">Contact</a
-					>
-				</nav>
+        <button
+          id="menuBtn"
+          class="md:hidden py-2 rounded-full hover:scale-105 active:scale-95 transition-all cursor-pointer"
+        >
+          <div id="menuIcon">
+            <Menu class={"icon-class"}></Menu>
+          </div>
+          <div id="closeIcon" class="hidden">
+            <Close class={"icon-class"}></Close>
+          </div>
+        </button>
 
-				<div class="hidden md:block">
+        <nav id="menu" class="hidden md:flex items-center gap-6">
+          <a
+            class="text-red-500 border-b-2 border-red-600 pb-1 text-md"
+            href="#">Inicio</a
+          >
+          <a
+            class="hover:text-red-500 transition-colors duration-200"
+            href="#estaciones">Estaciones</a
+          >
+          <a
+            class="font-bold py-1 bg-red-500 px-4 rounded-full hover:scale-105 active:scale-95 transition-all flex items-center gap-2"
+            href="#contact">Contacto</a
+          >
+        </nav>
+
+        <!-- <div class="hidden md:block">
 					<button
 						class="font-bold py-1 bg-red-500 px-4 rounded-full hover:scale-105 active:scale-95 transition-all flex items-center gap-2"
 					>
@@ -117,350 +142,290 @@ const tracks = [
 						>
 						En vivo
 					</button>
-				</div>
-			</div>
+				</div> -->
+      </div>
 
-			<nav
-				id="mobile-menu"
-				class="absolute z-10 top-full left-0 w-full bg-neutral-900 border-b border-neutral-800 py-6 flex flex-col items-center gap-6 transform -translate-y-full transition-transform duration-300 ease-in-out md:hidden"
-			>
-				<a
-					class="text-red-500 border-b-2 border-red-600 pb-1 text-md"
-					href="#">Home</a
-				>
-				<a
-					class="hover:text-red-500 transition-colors duration-200"
-					href="#players">Players</a
-				>
-				<a
-					class="hover:text-red-500 transition-colors duration-200"
-					href="#blog">Blog</a
-				>
-				<a
-					class="hover:text-red-500 transition-colors duration-200"
-					href="#contact">Contact</a
-				>
-			</nav>
-		</header>
+      <nav
+        id="mobile-menu"
+        class="absolute z-10 top-0 left-0 w-full h-screen bg-neutral-900 border-b border-neutral-800 py-6 flex flex-col items-center justify-center gap-6 transform -translate-x-full transition-transform duration-300 ease-in-out md:hidden"
+      >
+        <a class="text-red-500 border-b-2 border-red-600 pb-1 text-md" href="#"
+          >Inicio</a
+        >
+        <a
+          class="hover:text-red-500 transition-colors duration-200"
+          href="#estaciones">Estaciones</a
+        >
+        <a
+          class="hover:text-red-500 transition-colors duration-200"
+          href="#contact">Contacto</a
+        >
+      </nav>
+    </header>
 
-		<main class="">
-			<!-- Hero Section -->
-			<section class="relative w-full min-h-screen flex items-center">
-				<div class="absolute inset-0 z-0">
-					<Image
-						src={Banner}
-						alt={"Vibrant pop music aesthetics with neon lights, a modern artist profile, and high-saturation colors. The style is clean and high-energy, featuring a deep black background with glowing red and coffee brown accents to match the BOLIVIAMUX brand identity. Minimalist and impactful."}
-						class={"w-full h-full object-cover opacity-80"}
-					/>
-					<div
-						class="absolute inset-0 "
-					>
-					</div>
-				</div>
-				<div class="relative container mx-auto px-2 z-10">
-					<div
-						class="font-bold inline-flex items-center gap-2 bg-bg-red-500/20 border border-red-400/40 px-3 py-1 rounded-full text-red-500 mb-6 pulse-red"
-					>
-						<span
-							class="w-2 h-2 rounded-full bg-red-500 animate-pulse"
-						></span>
-						EN VIVO AHORA
-					</div>
-					<h1
-						class="text-5xl font-bold text-white mb-6 leading-tight"
-					>
-						Boliviamux <span class="text-red-500">el sonido</span> que
-						te Mueve
-					</h1>
-					<p class="mb-10 max-w-2xl">
-						Sintoniza la frecuencia que redefine la radio digital.
-						Desde los éxitos globales hasta el movimiento
-						underground, estamos en el epicentro de la cultura
-						musical.
-					</p>
-					<div class="flex flex-wrap gap-4 font-bold text-xl">
-						<button
-							class="bg-red-500 px-8 py-4 rounded-lg text-black hover:bg-red-500/90 transition-all flex items-center gap-3"
-						>
-							<span
-								class="material-symbols-outlined"
-								style="font-variation-settings: 'FILL' 1;"
-								>play_arrow</span
-							>
-							Escuchar Ahora
-						</button>
-						<button
-							class="border text-white px-8 py-4 rounded-lg bg-gray-100/10 hover:bg-gray-100/20 transition-all"
-						>
-							Explorar Canales
-						</button>
-					</div>
-				</div>
-			</section>
+    <main class="">
+      <!-- Hero Section -->
+      <section
+        class="relative w-full min-h-screen flex items-center md:justify-center"
+      >
+        <div class="absolute inset-0 z-0">
+          <Image
+            src={Hero}
+            alt={"Vibrant pop music aesthetics with neon lights, a modern artist profile, and high-saturation colors. The style is clean and high-energy, featuring a deep black background with glowing red and coffee brown accents to match the BOLIVIAMUX brand identity. Minimalist and impactful."}
+            class={"w-full h-full object-cover object-right opacity-70"}
+          />
+          <div class="absolute inset-0"></div>
+        </div>
+        <div class="relative container mx-auto px-2 z-10 md:text-center">
+          <h1 class="text-5xl font-bold text-white mb-6 leading-tight">
+            Boliviaretro <span class="text-red-500">el sonido</span> de tu vida
+          </h1>
+          <p class="mb-10 max-w-2xl mx-auto">
+            Este es un homenaje a la música y al arte, plasmado en sonidos, para
+            todos los tiempos. Cada espacio te transportara a viejos tiempo,
+            como contemporáneos envueltos en emociones.
+          </p>
+          <div class="flex flex-wrap gap-4 font-bold text-xl md:justify-center">
+            <button
+              id="escuchar-btn"
+              class="bg-red-500 px-8 py-4 rounded-lg text-black hover:bg-red-500/90 transition-all flex items-center gap-3"
+            >
+              <PlayArrow class={"icon-class"} />
+              Escuchar Ahora
+            </button>
+            <a
+              href="#estaciones"
+              class="border text-white px-8 py-4 rounded-lg bg-gray-100/30 hover:bg-gray-100/40 transition-all"
+            >
+              Explorar Canales
+            </a>
+          </div>
+        </div>
+      </section>
 
-			<!-- Players Section -->
-			<section class="container mx-auto px-2 py-8" id="players">
-				<div
-					class="flex flex-col md:flex-row justify-between items-start mb-12 gap-4"
-				>
-					<div>
-						<h2 class="text-2xl font-bold text-white mb-2">
-							Nuestras Estaciones
-						</h2>
-						<div class="h-1 w-24 bg-red-500"></div>
-					</div>
-					<p class="max-w-md">
-						Selecciona tu vibra. Tres canales especializados
-						transmitiendo 24/7 sin interrupciones.
-					</p>
-				</div>
+      <!-- Players Section -->
+      <section class="container mx-auto px-2 py-8" id="estaciones">
+        <div
+          class="flex flex-col md:flex-row justify-between items-start mb-12 gap-4"
+        >
+          <div>
+            <h2 class="text-2xl font-bold text-white mb-2">
+              Nuestras Estaciones
+            </h2>
+            <div class="h-1 w-24 bg-red-500"></div>
+          </div>
+          <p class="max-w-md">
+            Selecciona tu radio. Tres canales especializados transmitiendo 24/7.
+          </p>
+        </div>
 
-				<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-					<!-- Cards radios -->
-					{
-						tracks.map((track) => (
-							<div
-								id="audio-track"
-								class="bg-neutral-900 border p-6 rounded-xl hover:border-red-500 transition-all group overflow-hidden relative"
-							>
-								<div class="aspect-square rounded-lg mb-6 overflow-hidden border border-outline-variant">
-									<Image
-										src={track.image}
-										alt={
-											"Imagen de un casete retro con un fondo de color rojo"
-										}
-										class={
-											"w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-										}
-									/>
-								</div>
-								<h3 class="font-bold text-2xl text-white mb-1">
-									{track.title}
-								</h3>
-								<p class="text-red-400 font-bold mb-6">
-									{track.description}
-								</p>
-								<div class="space-y-4">
-									<div class="h-1 w-full bg-gray-300 rounded-full overflow-hidden"></div>
-									<div class="flex items-center justify-between">
-										<button
-											id="play-btn"
-											class="w-12 h-12 flex items-center justify-center bg-gray-100 text-neutral-800 rounded-full hover:bg-gray-100/90 transition-all"
-										>
-											<svg
-												id="toggle-play"
-												class="hidden"
-												fill="currentColor"
-												xmlns="http://www.w3.org/2000/svg"
-												height="40px"
-												viewBox="0 -960 960 960"
-												width="40px"
-											>
-												<path d="M212-212v-536.67h536.67V-212H212Z" />
-											</svg>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Cards radios -->
+          {
+            tracks.map((track) => (
+              <div
+                id="audio-track"
+                class="bg-neutral-900 border p-6 rounded-xl hover:border-red-500 transition-all group overflow-hidden relative"
+              >
+                <div class="aspect-4/3 rounded-lg mb-6 overflow-hidden border border-outline-variant">
+                  <Image
+                    src={track.image}
+                    alt={"Imagen de un casete retro con un fondo de color rojo"}
+                    class={
+                      "w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    }
+                  />
+                </div>
+                <p class="text-red-400 font-bold mb-6">{track.description}</p>
+                <div class="space-y-4">
+                  <div class="h-1 w-full bg-gray-300 rounded-full overflow-hidden" />
+                  <div class="flex items-center justify-between">
+                    <button
+                      id="play-btn"
+                      class="w-12 h-12 flex items-center justify-center bg-gray-100 text-neutral-800 rounded-full hover:bg-gray-100/90 transition-all"
+                    >
+                      <svg
+                        id="toggle-play"
+                        class="hidden"
+                        fill="currentColor"
+                        xmlns="http://www.w3.org/2000/svg"
+                        height="40px"
+                        viewBox="0 -960 960 960"
+                        width="40px"
+                      >
+                        <path d="M212-212v-536.67h536.67V-212H212Z" />
+                      </svg>
 
-											<svg
-												id="toggle-play"
-												class=""
-												fill="currentColor"
-												xmlns="http://www.w3.org/2000/svg"
-												height="40px"
-												viewBox="0 -960 960 960"
-												width="32px"
-											>
-												<path d="M292-151v-662l520.33 331L292-151Z" />
-											</svg>
-										</button>
-										<div id="toggle-play" class="hidden">
-											<div class="flex gap-1">
-												<div class="w-1 h-4 bg-red-500 animate-bounce" />
-												<div class="w-1 h-6 bg-red-500 animate-[bounce_1.2s_infinite]" />
-												<div class="w-1 h-3 bg-red-500 animate-[bounce_0.8s_infinite]" />
-												<div class="w-1 h-5 bg-red-500 animate-[bounce_1.1s_infinite]" />
-											</div>
-										</div>
-										<div id="toggle-play">
-											<div class="flex gap-1 opacity-30">
-												<div class="w-1 h-4 bg-white" />
-												<div class="w-1 h-6 bg-white" />
-												<div class="w-1 h-3 bg-white" />
-											</div>
-										</div>
-									</div>
-								</div>
-								<audio id="audio-element" src={track.url} />
-							</div>
-						))
-					}
-				</div>
-			</section>
+                      <svg
+                        id="toggle-play"
+                        class=""
+                        fill="currentColor"
+                        xmlns="http://www.w3.org/2000/svg"
+                        height="40px"
+                        viewBox="0 -960 960 960"
+                        width="32px"
+                      >
+                        <path d="M292-151v-662l520.33 331L292-151Z" />
+                      </svg>
+                    </button>
+                    <div id="toggle-play" class="hidden">
+                      <div class="flex gap-1">
+                        <div class="w-1 h-4 bg-red-500 animate-bounce" />
+                        <div class="w-1 h-6 bg-red-500 animate-[bounce_1.2s_infinite]" />
+                        <div class="w-1 h-3 bg-red-500 animate-[bounce_0.8s_infinite]" />
+                        <div class="w-1 h-5 bg-red-500 animate-[bounce_1.1s_infinite]" />
+                      </div>
+                    </div>
+                    <div id="toggle-play">
+                      <div class="flex gap-1 opacity-30">
+                        <div class="w-1 h-4 bg-white" />
+                        <div class="w-1 h-6 bg-white" />
+                        <div class="w-1 h-3 bg-white" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <audio id="audio-element" src={track.url} />
+              </div>
+            ))
+          }
+        </div>
+      </section>
 
-			<!-- Block Section -->
+      <!-- Block Section -->
 
-			<!-- Contact Section -->
-			<section class="contiainer mx-auto px-2 py-12" id="contact">
-				<div
-					class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 bg-neutral-900 border border-red-400 rounded-2xl overflow-hidden"
-				>
-					<div
-						class="p-10 md:p-16 bg-neutral-800 flex flex-col justify-center"
-					>
-						<h2 class="text-3xl font-bold text-white mb-6">
-							Contáctanos
-						</h2>
-						<p class="text-on-surface-variant mb-8 text-body-lg">
-							¿Quieres publicitarte con nosotros o enviarnos tu
-							demo? Déjanos un mensaje y nuestro equipo se pondrá
-							en contacto.
-						</p>
-						<div class="space-y-6">
-							<div class="flex items-center gap-4 text-white">
-								<span
-									class="material-symbols-outlined text-red-500"
-									>mail</span
-								>
-								<span>contacto@boliviamux.com</span>
-							</div>
-							<div class="flex items-center gap-4 text-white">
-								<span
-									class="material-symbols-outlined text-red-500"
-									>call</span
-								>
-								<span>+591 2 2441010</span>
-							</div>
-							<div class="flex items-center gap-4 text-white">
-								<span
-									class="material-symbols-outlined text-red-500"
-									>location_on</span
-								>
-								<span>La Paz, Bolivia</span>
-							</div>
-						</div>
-					</div>
-					<div class="p-10 md:p-16">
-						<form class="space-y-6">
-							<div>
-								<label
-									class="block font-label-md text-[12px] uppercase mb-2"
-									>Nombre Completo</label
-								>
-								<input
-									class="w-full bg-transparent border border-outline-variant rounded p-3 text-white focus:border-primary-container focus:ring-0 transition-all outline-none"
-									type="text"
-								/>
-							</div>
-							<div>
-								<label
-									class="block font-label-md text-[12px] uppercase mb-2"
-									>Correo Electrónico</label
-								>
-								<input
-									class="w-full bg-transparent border border-outline-variant rounded p-3 text-white focus:border-primary-container focus:ring-0 transition-all outline-none"
-									type="email"
-								/>
-							</div>
-							<div>
-								<label
-									class="block font-label-md text-[12px] uppercase mb-2"
-									>Mensaje</label
-								>
-								<textarea
-									class="w-full bg-transparent border border-outline-variant rounded p-3 text-white focus:border-primary-container focus:ring-0 transition-all outline-none resize-none"
-									rows="4"></textarea>
-							</div>
-							<button
-								class="w-full bg-red-500 text-gray-300 py-4 rounded font-bold uppercase tracking-widest hover:bg-red-500/90 transition-all active:scale-95"
-							>
-								Enviar Mensaje
-							</button>
-						</form>
-					</div>
-				</div>
-			</section>
-		</main>
+      <!-- Contact Section -->
+      <section class="contiainer mx-auto px-2 py-12" id="contact">
+        <div
+          class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 bg-neutral-900 border border-red-400 rounded-2xl overflow-hidden"
+        >
+          <div class="p-10 md:p-16 bg-neutral-800 flex flex-col justify-center">
+            <h2 class="text-3xl font-bold text-white mb-6">Contáctanos</h2>
+            <p class="text-on-surface-variant mb-8 text-body-lg">
+              ¿Quieres publicitarte con nosotros o pedirnos canciones? Déjanos
+              un mensaje y nuestro equipo se pondrá en contacto.
+            </p>
+            <div class="space-y-6">
+              <div class="flex items-center gap-4 text-white">
+                <Mail class={"icon-class"} />
+                <span>contacto@boliviaretro.com</span>
+              </div>
+              <div class="flex items-center gap-4 text-white">
+                <Call class={"icon-class"} />
+                <span>+591 2 2441010</span>
+              </div>
+              <div class="flex items-center gap-4 text-white">
+                <LocationOn class={"icon-class"} />
+                <span>La Paz, Bolivia</span>
+              </div>
+            </div>
+          </div>
+          <div class="p-10 md:p-16">
+            <form class="space-y-6">
+              <div>
+                <label class="block font-label-md text-[12px] uppercase mb-2"
+                  >Nombre Completo</label
+                >
+                <input
+                  class="w-full bg-transparent border border-outline-variant rounded p-3 text-white focus:border-primary-container focus:ring-0 transition-all outline-none"
+                  type="text"
+                />
+              </div>
+              <div>
+                <label class="block font-label-md text-[12px] uppercase mb-2"
+                  >Correo Electrónico</label
+                >
+                <input
+                  class="w-full bg-transparent border border-outline-variant rounded p-3 text-white focus:border-primary-container focus:ring-0 transition-all outline-none"
+                  type="email"
+                />
+              </div>
+              <div>
+                <label class="block font-label-md text-[12px] uppercase mb-2"
+                  >Mensaje</label
+                >
+                <textarea
+                  class="w-full bg-transparent border border-outline-variant rounded p-3 text-white focus:border-primary-container focus:ring-0 transition-all outline-none resize-none"
+                  rows="4"></textarea>
+              </div>
+              <button
+                class="w-full bg-red-500 text-gray-300 py-4 rounded font-bold uppercase tracking-widest hover:bg-red-500/90 transition-all active:scale-95"
+              >
+                Enviar Mensaje
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
 
-		<!-- Persistent Mini Player (Desktop) -->
-		<div id="mini-player" class="fixed bottom-28 right-6 z-50 hidden lg:block">
-			<div
-				class="bg-surface-container border border-outline-variant p-4 rounded-xl shadow-2xl flex items-center gap-4 min-w-[320px] backdrop-blur-md"
-			>
-				<img
-					class="w-12 h-12 rounded bg-surface-container-highest"
-					data-alt="A small, stylized thumbnail of a music album cover featuring abstract red and white wave patterns on a dark background. The image is sleek and modern, designed to represent a 'Now Playing' status in a high-end audio interface."
-					src="https://lh3.googleusercontent.com/aida-public/AB6AXuBeWJLjg8SKre4VlterG0ZNdZmakRj2oKWfkKzo6Kh_KDM026KHY-AW2zAkWiNpI4Xss-zTfd-wyMKI1wMY4V9Hl0-pHpi6LJRc2DVQVj3GZ325gRHJgIuw_oWKmTctHWRJKA5QWjixNBAbKrRNruejsFyiCyJxAdbzrel8jT_xZdmeIZ6WBVuXAJyJYhHm0ivGHbhyybKPzv0qUNfVvzTcbWVLc_s8bttmVLagkPclntY5xiZ6ZYLBbHnlHv1feCFote9pfgB9Xtk"
-				/>
-				<div class="flex-1 overflow-hidden">
-					<div id="title" class="text-white font-bold text-label-md truncate">
-						Hit Radio Bolivia
-					</div>
-					<div
-						id="description" class="text-primary-container text-[12px] animate-pulse"
-					>
-						On Air: Top Global Hits
-					</div>
-				</div>
-				<button
-					class="w-10 h-10 bg-primary-container text-on-primary-container rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform"
-				>
-					<span
-						class="material-symbols-outlined"
-						style="font-variation-settings: 'FILL' 1;">pause</span
-					>
-				</button>
-			</div>
-		</div>
+    <!-- Persistent Mini Player (Desktop) 
+    <div id="mini-player" class="fixed bottom-28 right-6 z-50 hidden lg:block">
+      <div
+        class="bg-surface-container border border-outline-variant p-4 rounded-xl shadow-2xl flex items-center gap-4 min-w-[320px] backdrop-blur-md"
+      >
+        <div class="w-12 h-12 rounded-full bg-red-500 flex justify-center items-center border-2 border-neutral-500">
+          <span class="w-4 h-4 rounded-full bg-neutral-800"></span>
+        </div>
+        <div class="flex-1 overflow-hidden">
+          <div id="title" class="text-white font-bold text-label-md truncate">
+            Hit Radio Bolivia
+          </div>
+          <div
+            id="description"
+            class="text-primary-container text-[12px] animate-pulse"
+          >
+            On Air: Top Global Hits
+          </div>
+        </div>
+        <button
+          class="w-10 h-10 bg-primary-container text-on-primary-container rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform"
+        >
+          <span
+            class="material-symbols-outlined"
+            style="font-variation-settings: 'FILL' 1;">pause</span
+          >
+        </button>
+      </div>
+    </div>-->
 
-		<!-- Footer -->
-		<footer class="border-t py-10">
-			<div
-				class="container mx-auto flex flex-col md:flex-row justify-between items-center px-2"
-			>
-				<div class="">
-					<div class="text-2xl font-bold uppercase">BOLIVIAMUX</div>
-					<p class="text-center">© 2026 BOLIVIAMUX. Broadcasting.</p>
-				</div>
-				<div class="flex gap-8">
-					<a
-						class="text-on-surface-variant hover:text-primary-container transition-colors font-body-md"
-						href="#">Privacy Policy</a
-					>
-					<a
-						class="text-on-surface-variant hover:text-primary-container transition-colors font-body-md"
-						href="#">Terms of Service</a
-					>
-					<a
-						class="text-on-surface-variant hover:text-primary-container transition-colors font-body-md"
-						href="#">Advertising</a
-					>
-				</div>
-				<div class="flex gap-4">
-					<a
-						class="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center text-white hover:border-primary-container hover:text-primary-container transition-all"
-						href="#"
-					>
-						<span class="material-symbols-outlined text-[20px]"
-							>public</span
-						>
-					</a>
-					<a
-						class="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center text-white hover:border-primary-container hover:text-primary-container transition-all"
-						href="#"
-					>
-						<span class="material-symbols-outlined text-[20px]"
-							>share</span
-						>
-					</a>
-					<a
-						class="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center text-white hover:border-primary-container hover:text-primary-container transition-all"
-						href="#"
-					>
-						<span class="material-symbols-outlined text-[20px]"
-							>graphic_eq</span
-						>
-					</a>
-				</div>
-			</div>
-		</footer>
-		<script src="../scripts/app.js"></script>
-	</body>
+    <!-- Footer -->
+    <footer class="border-t py-10">
+      <div
+        class="container mx-auto flex flex-col md:flex-row justify-between items-center gap-4 px-2"
+      >
+        <div class="">
+          <div class="text-center text-2xl font-bold uppercase">
+            BOLIVIARETRO
+          </div>
+          <p class="text-center text-sm">© 2026 BOLIVIARETRO. Broadcasting.</p>
+        </div>
+        <div class="flex gap-4 text-sm">
+          <a class="" href="#">Politica de privacidad</a>
+          <a class="" href="#">Terminos de Servicio</a>
+        </div>
+        <div class="flex gap-4">
+          <a
+            class="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center text-white hover:border-primary-container hover:text-primary-container transition-all"
+            href="#"
+          >
+            <Public class={"icon-class"} />
+          </a>
+          <a
+            class="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center text-white hover:border-primary-container hover:text-primary-container transition-all"
+            href="#"
+          >
+            <Share class={"icon-class"} />
+          </a>
+          <a
+            class="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center text-white hover:border-primary-container hover:text-primary-container transition-all"
+            href="#"
+          >
+            <GraphicEq class={"icon-class"} />
+          </a>
+        </div>
+      </div>
+    </footer>
+    <script src="../scripts/app.js"></script>
+  </body>
 </html>
